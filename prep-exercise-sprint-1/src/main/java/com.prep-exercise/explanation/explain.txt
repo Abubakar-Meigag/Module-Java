@@ -39,3 +39,10 @@ Why are private methods useful? Why not just have everything in the main method?
 
 ---
 Javadoc should describe the why not the what of your code - why?
+
+---
+
+How might you have found the issue if you didn’t have a debugger?
+
+What was the process you followed when debugging code?
+e.g. how did you decide where to put breakpoints?
