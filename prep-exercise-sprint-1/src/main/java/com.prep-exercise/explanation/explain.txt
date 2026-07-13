@@ -23,6 +23,7 @@ What is an enhanced for loop in Java?
 Would an enhanced for loop be useful for this exercise? Why?
 When would an enhanced for loop be useful?
 
+---
 Did you encounter any compilation errors when writing your code?
 How did you fix them? Did the IDE help?
 
@@ -30,3 +31,11 @@ What is a Java main method for?
 
 What do the keywords public, static and void mean?
 
+
+---
+
+Why are private methods useful? Why not just have everything in the main method?
+
+
+---
+Javadoc should describe the why not the what of your code - why?
