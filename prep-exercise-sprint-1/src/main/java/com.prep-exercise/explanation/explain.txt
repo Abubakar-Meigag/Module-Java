@@ -1,0 +1,32 @@
+
+What is a keyword in java?
+
+
+---
+Choose 3 keywords and explain what they represent
+
+
+
+---
+What is meant by the term ‘primitive type’?
+
+
+
+---
+# Reflections - sprint 1
+
+List the primitive types you’ve seen and explain what they represent
+
+
+---
+What is an enhanced for loop in Java?
+Would an enhanced for loop be useful for this exercise? Why?
+When would an enhanced for loop be useful?
+
+Did you encounter any compilation errors when writing your code?
+How did you fix them? Did the IDE help?
+
+What is a Java main method for?
+
+What do the keywords public, static and void mean?
+
