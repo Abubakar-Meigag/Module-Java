@@ -1,48 +1,123 @@
 
 What is a keyword in java?
-
+- Keywords are predefined, reserved identifiers in the Java language that have special meaning to the compiler.
+They form the fundamental syntax and control structures of the language.
+You cannot use them as identifiers for variables, methods, classes, or packages
+doing so will result in a compilation error.
 
 ---
 Choose 3 keywords and explain what they represent
+class – Defines a blueprint from which objects are instantiated.
+        It encapsulates data and behavior into a single unit and serves
+        as the fundamental building block of object-oriented programming in Java.
 
+new – Instantiates objects by allocating memory on the heap and invoking the constructor.
+      It's the only way to create objects dynamically in Java (aside from reflection).
+
+extends – Indicates inheritance, where a child class inherits fields and methods from a parent class.
+          It enables code reuse and polymorphism, forming the foundation of Java's inheritance hierarchy.
 
 
 ---
 What is meant by the term ‘primitive type’?
-
+- Primitive types are the most basic data types built into the Java language.
+They're not objects they store values directly in stack memory, not references to heap-allocated objects.
+They're more efficient than objects because they avoid the overhead of object creation and garbage collection.
+Each primitive type has a fixed size, making them predictable and performant.
 
 
 ---
 # Reflections - sprint 1
 
 List the primitive types you’ve seen and explain what they represent
-
+int – Whole numbers (like 42, -5, 0)
+double – Decimal numbers (like 3.14, -0.5)
+boolean – True or false values
+char – Single characters (like 'A', 'z', '7')
 
 ---
 What is an enhanced for loop in Java?
-Would an enhanced for loop be useful for this exercise? Why?
+- The enhanced for loop (also called the for-each loop) is a syntactic construct introduced in Java 5
+that iterates over arrays and Iterable collections without requiring explicit index management.
+It abstracts away the iteration mechanics, making code cleaner and reducing off-by-one errors.
+
+Would it be useful for this exercise? Why?
+- For this specific exercise, not really because we needed access to the current index to compare adjacent elements
+or perform position-based operations. The enhanced for loop only provides the element value,
+not its index, so we'd lose essential positional context.
+
 When would an enhanced for loop be useful?
+- When you're performing read-only operations where the element's position isn't relevant
+like calculating sums, printing collections, applying transformations to each element,
+or searching for a value without needing its index. It's also great for reducing boilerplate
+and improving readability in straightforward iteration scenarios.
 
 ---
 Did you encounter any compilation errors when writing your code?
 How did you fix them? Did the IDE help?
-
-What is a Java main method for?
-
-What do the keywords public, static and void mean?
-
+- Yes, I encountered several compilation errors, typos, mismatched types,
+and incorrect method signatures. My IDE (IntelliJ IDEA) was invaluable:
+it provides real-time syntax highlighting, suggests quick fixes (like importing missing classes or correcting types),
+and offers refactoring tools. For instance, when I accidentally used String where an int was expected,
+the IDE highlighted the issue and suggested casting or conversion methods.
+This significantly accelerated my debugging process and helped me understand Java's type system better.
 
 ---
+What is a Java main method for?
+- The main method is the designated entry point for Java applications.
+When you execute a Java program, the Java Virtual Machine (JVM) looks for a method with the exact signature
+public static void main(String[] args) and invokes it to start the program.
+It receives command-line arguments as a String array, allowing you to pass input to the program at runtime.
 
+---
+What do the keywords public, static and void mean?
+public – An access modifier that makes the method globally accessible from any class in any package.
+         It ensures the JVM can invoke the method from outside the class.
+
+static – Indicates that the method belongs to the class itself rather than to any specific instance.
+          This allows the JVM to call main before any objects are instantiated,
+          which is essential since no objects exist at program startup.
+
+void – Specifies that the method doesn't return any value. The main method's role is to initiate execution,
+       not to compute and return a result to the caller (the JVM expects no return value).
+
+---
 Why are private methods useful? Why not just have everything in the main method?
-
+- Private methods are crucial for encapsulation and modularity. They:
+Encapsulate logic   – Hide implementation details from external classes, exposing only what's necessary through public methods.
+Promote code reuse  – Allow you to call the same helper logic from multiple places within the class without duplication.
+Improve testability – Smaller, focused methods are easier to unit test in isolation.
+Enhance readability – Break complex operations into well-named, understandable pieces.
+If you put everything in main, you'd have a monolithic "god method" that's hard to read, debug, and maintain.
+It violates the Single Responsibility Principle and makes code brittle – any change risks breaking unrelated functionality.
 
 ---
 Javadoc should describe the why not the what of your code - why?
+- Because the code itself already describes what it does – the method name, parameters,
+and implementation reveal the mechanics. What's not obvious is the intent:
+why this approach was chosen, what constraints exist, when to use it, and what edge cases to consider.
+Javadoc should capture the reasoning, assumptions, and design decisions that aren't visible in the code.
+This helps other developers (and your future self) understand the context and avoid misusing the method.
+Good Javadoc explains the "business logic" behind the technical implementation.
 
 ---
-
 How might you have found the issue if you didn’t have a debugger?
+- I'd use tactical logging with System.out.println() statements placed strategically throughout the code.
+I'd output variable values before and after critical operations, check loop iterations, and verify method inputs/outputs.
+I'd also use assertions to validate assumptions. While more manual and time-consuming, this approach forces you to think
+systematically about the program's state at each stage, which can actually deepen your understanding of the code's behavior.
 
+---
 What was the process you followed when debugging code?
 e.g. how did you decide where to put breakpoints?
+- My debugging process followed this systematic approach:
+Reproduce the issue – First, I identified the exact input and conditions that triggered the bug.
+Analyze the stack trace – When an exception occurred, I read the stack trace carefully to pinpoint the failing line number and trace the call sequence.
+Set breakpoints strategically – I placed breakpoints:
+At the method entry point to inspect initial state
+Before and after suspicious operations (like array access or calculations)
+Inside loops, especially near the iteration where the error occurs
+At conditional branches to see which path the code takes
+Step through execution – Using the debugger, I stepped through line by line, watching variables in the "Variables" pane to catch when values deviated from expectations.
+Identify the deviation – Once I spotted where state became incorrect, I traced backward to find the root cause.
+Fix and verify – After implementing the fix, I re-ran with the same test data and watched my breakpoints to confirm the behavior was now correct.
