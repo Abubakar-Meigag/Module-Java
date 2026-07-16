@@ -33,7 +33,7 @@ class Polygon {
 
 //    public void SetNumberOfSides(int numberOfSides) {
 //        return this.numberOfSides;
-//    } // didn't compile - FinalSafety.java:31: error: incompatible types: unexpected return value
+//    } // FinalSafety.java:31: error: incompatible types: unexpected return value
 //        return this.numberOfSides;
 
 }
