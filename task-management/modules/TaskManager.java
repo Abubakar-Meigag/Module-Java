@@ -13,6 +13,10 @@ public class TaskManager{
     }
 
     public void addTask(Task task){
+        if (this.taskCount >= MAX_TASKS){
+            System.out.println("Task limit reached");
+            return;
+        }
         tasks[taskCount] = task;
         taskCount++;
     }
