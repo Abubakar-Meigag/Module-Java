@@ -6,6 +6,13 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for {@link StringUtilities}.
+ * <p>
+ * Verifies correct behaviour of palindrome checking
+ * and comma-separated string splitting.
+ * </p>
+ */
 class StringUtilitiesTest {
 
     private StringUtilities stringUtilities;
@@ -15,6 +22,10 @@ class StringUtilitiesTest {
         stringUtilities = new StringUtilities();
     }
 
+    /**
+     * Tests that {@link StringUtilities#isPalindrome(String)} correctly
+     * identifies palindromes and non-palindromes.
+     */
     @Test
     void testIsPalindrome() {
         assertTrue(stringUtilities.isPalindrome("racecar"));
@@ -22,6 +33,10 @@ class StringUtilitiesTest {
         assertFalse(stringUtilities.isPalindrome("hello"));
     }
 
+    /**
+     * Tests that {@link StringUtilities#splitCommaSeparatedLine(String)}
+     * correctly splits a comma-separated string into a list.
+     */
     @Test
     void testSplitCommaSeparatedLine() {
         assertEquals(Arrays.asList("a", "b", "c"), stringUtilities.splitCommaSeparatedLine("a,b,c"));

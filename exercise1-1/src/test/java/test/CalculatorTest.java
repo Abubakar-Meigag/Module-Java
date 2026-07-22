@@ -5,10 +5,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for {@link Calculator}.
+ * <p>
+ * Verifies correct behaviour of all arithmetic operations
+ * including edge cases such as division by zero.
+ * </p>
+ */
 class CalculatorTest {
 
     private Calculator calculator;
 
+    /**
+     * Tests that {@link Calculator#add(int, int)} returns the correct sum.
+     *
+     * @see Calculator#subtract(int, int)
+     */
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
