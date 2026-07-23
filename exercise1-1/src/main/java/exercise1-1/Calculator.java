@@ -22,7 +22,7 @@ public class Calculator {
     }
 
     /**
-     * Subtracts {@param b} from {@param a}.
+     * Subtracts {@code b} from {@code a}.
      *
      * @param a the value to subtract from
      * @param b the value to subtract
@@ -46,7 +46,7 @@ public class Calculator {
     }
 
     /**
-     * Divides {@param a} by {@param b}.
+     * Divides {@code a} by {@code b}.
      *
      * @param a the dividend
      * @param b the divisor (must not be zero)
