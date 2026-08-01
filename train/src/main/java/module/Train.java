@@ -10,6 +10,8 @@ public class Train {
    public ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
    public String[] newArray = {"a", "b", "c", "h"};
    public String[] oldArray = new String[5];
+   public List<String> array = new ArrayList<>();
+   public ArrayList<Integer> oldArrayList = new ArrayList<>();
 
    public void getOldArray(String[] oldArray) {
        System.out.println(Arrays.toString(oldArray));
